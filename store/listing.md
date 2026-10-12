@@ -49,13 +49,26 @@ CHOOM.GG is a fan-made companion for the Cyberpunk TCG and is not affiliated wit
 | Store icon | 128x128 PNG (96x96 artwork, 16 px transparent padding) | `icon-128.png` |
 | Small promo tile | 440x280 PNG | `small-promo-440x280.png` |
 | Marquee promo tile (optional) | 1400x560 PNG | `marquee-1400x560.png` |
-| Screenshots (at least 1, up to 5) | 1280x800 PNG | to capture from a real stream, see below |
+| Screenshots (at least 1, up to 5) | 1280x800 PNG | `screenshot-1-card-hover-1280x800.png`, `screenshot-2-deck-panel-1280x800.png` |
 
 The promo tiles use no card art or card names (those belong to CD PROJEKT RED); the deck panel in
 them is a drawing.
 
-**Screenshots to capture** on the owner's own stream, with the extension showing (1280x800, or a
-larger capture cropped to 16:10):
+**How the two screenshots were made.** They are labelled "Example" in the picture, and nothing in
+them is drawn by hand:
+- The stream picture is a real Choom Table, the public table tour at choom.gg/play/tour.
+- The deck state is that same game, rebuilt with the tour's own seed and starter decks, run through
+  the real tracker (`buildTracker`, `toStreamState`). The card positions were measured on that
+  screen.
+- The real extension build drew the panel and the hover. It loaded the page through a local relay,
+  in Chromium.
+- The page around the video is a plain stand-in with the label, never an imitation of Twitch's
+  interface.
+
+Replace them with captures from a real stream when there is one.
+
+**More screenshots worth capturing** on the owner's own stream (1280x800, or a larger capture
+cropped to 16:10):
 1. The deck panel beside a live Choom Table game.
 2. A card hover: the pointer on a card in the video, its art shown full size.
 3. The panel collapsed, with the stream unobstructed.
