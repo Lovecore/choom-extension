@@ -17,7 +17,8 @@ from a tagged commit here, and you can check that yourself (see "Check a release
 
 ## Install
 
-- **Chrome Web Store:** coming soon.
+- **Chrome Web Store:** coming soon. The listing's text, images and privacy answers are in
+  [store/](store/listing.md), kept with the code.
 - **From a release:** download the zip from [Releases](../../releases), unzip it, open
   `chrome://extensions`, turn on **Developer mode**, press **Load unpacked** and choose the folder.
   Edge works the same way at `edge://extensions`.

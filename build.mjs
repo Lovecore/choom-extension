@@ -58,9 +58,10 @@ const httpRelays = relays.map((r) => r.replace(/^ws/, 'http'));
 const icons = { 16: 'icons/icon16.png', 32: 'icons/icon32.png', 48: 'icons/icon48.png', 128: 'icons/icon128.png' };
 const manifest = {
   manifest_version: 3,
-  name: dev ? 'CHOOM.GG (dev)' : 'CHOOM.GG',
+  name: dev ? 'CHOOM.GG for Twitch (dev)' : 'CHOOM.GG for Twitch',
   version,
-  description: "See a streamer's Choom Table deck on Twitch, in step with their stream.",
+  // The Chrome Web Store shows this as the listing's summary (132 characters at most).
+  description: "See a streamer's Cyberpunk TCG deck as they play, and any card on their table when you point at it on their Twitch stream.",
   // WebSocket messages keep the service worker alive from Chrome 116 on.
   minimum_chrome_version: '116',
   icons,
