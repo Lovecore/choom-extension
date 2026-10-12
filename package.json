@@ -1,0 +1,28 @@
+{
+  "name": "choom-extension",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The CHOOM.GG browser extension: a streamer's Choom Table deck and card hovers on Twitch, in step with their stream.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "build:dev": "node build.mjs --dev",
+    "check": "tsc --noEmit",
+    "test": "tsx scripts/verify-viewer.cts",
+    "verify:reproducible": "node scripts/verify-reproducible.mjs",
+    "package": "node scripts/package.mjs"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.24",
+    "@types/node": "^24.7.2",
+    "@types/ws": "^8.18.1",
+    "esbuild": "^0.27.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "ws": "^8.21.3"
+  }
+}

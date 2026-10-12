@@ -1,0 +1,12 @@
+CHOOM.GG for Twitch
+Copyright (c) 2026 CHOOM.GG
+
+This product includes code adapted from RiftSight (https://riftsight.gg), used
+with the permission of its developers:
+
+- src/content/latency-bridge.ts: reading how far behind live Twitch's player
+  is, adapted from RiftSight 0.12.0's twitch-latency-bridge.
+- src/content/panel.ts: finding the element that holds Twitch's player and its
+  controls, adapted from RiftSight 0.12.0.
+
+Thank you to the RiftSight team.

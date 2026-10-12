@@ -1,0 +1,12 @@
+body { width: 260px; margin: 0; padding: 12px; font: 500 12px/1.4 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: #e8f1f7; background: #050505; }
+header { font: 800 16px/1 system-ui, sans-serif; letter-spacing: .08em; margin-bottom: 8px; }
+header b { color: #f7e100; }
+header span { color: #00f0ff; }
+.lede { color: #c5d2dc; margin: 0 0 10px; }
+.check { display: flex; gap: 8px; align-items: center; cursor: pointer; margin-bottom: 8px; }
+.check input { accent-color: #f7e100; }
+.field { display: flex; gap: 8px; align-items: center; color: #7f93a3; }
+select { background: #0a0a0a; color: #e8f1f7; border: 1px solid #2a3540; padding: 2px 4px; font: inherit; }
+.hint { color: #7f93a3; font-size: 11px; margin: 4px 0 10px; }
+footer { color: #4f5f6b; font-size: 10px; border-top: 1px solid #1c252e; padding-top: 6px; }

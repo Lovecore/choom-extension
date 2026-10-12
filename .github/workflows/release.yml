@@ -1,0 +1,39 @@
+name: Release
+# Push a tag like v0.1.0 (matching package.json's version) to publish that commit's build.
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - name: The tag matches package.json
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          test "v${version}" = "${GITHUB_REF_NAME}" || { echo "tag ${GITHUB_REF_NAME} != v${version}"; exit 1; }
+      - run: npm run build && npm run package
+      - name: Checksum and notes
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          zip="dist/choom-extension-${version}.zip"
+          sha256sum "$zip" | tee "${zip}.sha256"
+          awk -v v="## ${version}" 'index($0, v) == 1 {on=1; next} /^## / && on {exit} on' CHANGELOG.md > notes.md
+          printf '\nSHA-256 of the zip: `%s`\n\nCheck it: `git checkout %s && npm ci && npm run package && shasum -a 256 %s`\n' \
+            "$(cut -d' ' -f1 "${zip}.sha256")" "${GITHUB_REF_NAME}" "$zip" >> notes.md
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          gh release create "${GITHUB_REF_NAME}" "dist/choom-extension-${version}.zip" "dist/choom-extension-${version}.zip.sha256" \
+            --title "CHOOM.GG for Twitch ${version}" --notes-file notes.md

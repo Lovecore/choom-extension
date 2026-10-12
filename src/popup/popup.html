@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CHOOM.GG</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header><b>CHOOM</b><span>.GG</span></header>
+<p class="lede">See a streamer's Choom Table deck on Twitch, in step with their stream.</p>
+<label class="check"><input type="checkbox" id="show"> Show streamers' decks on Twitch</label>
+<label class="check"><input type="checkbox" id="hover"> Point at a card on stream to see it</label>
+<label class="field">Extra delay
+  <select id="extra">
+    <option value="0">None</option>
+    <option value="2000">2 s</option>
+    <option value="5000">5 s</option>
+    <option value="10000">10 s</option>
+    <option value="20000">20 s</option>
+  </select>
+</label>
+<p class="hint">Only if the deck runs ahead of the video. The streamer's own delay always applies first.</p>
+<footer id="foot"></footer>
+<script src="popup.js"></script>
+</body>
+</html>
