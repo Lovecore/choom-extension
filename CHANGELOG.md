@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 (unreleased)
+## 0.1.0 (2026-10-12)
 
 The first version.
 - A streamer's deck beside their Twitch stream: what's left, the odds of drawing each card, the
